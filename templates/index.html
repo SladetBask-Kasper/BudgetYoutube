@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="sv" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>YouTube Lite</title>
+    <link rel="icon" type="image/png" href="https://www.favicon.cc/logo3d/697454.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <link rel= "stylesheet" type= "text/css" href="{{ url_for('static', filename='css/master.css') }}">
+    </head>
+  <body>
+    <center><div id="header">
+        <!-- https://media-manager.starsinsider.com/1920/na_5c5d5d6e969d4.jpg -->
+        <a href="/"><img src="/static/pics/yt_header.png" alt="YouTube Lite" width="65%" height="65%"></a>
+        {{title2}}
+    </div></center>
+
+    <form action="/upload" method="get" id="uploadbtn">
+        <input type="submit" class="btn btn-primary" value="Upload"
+             name="Submit" />
+    </form>
+
+    <br><div id="videos">{{videos}}</div>
+  </body>
+</html>
