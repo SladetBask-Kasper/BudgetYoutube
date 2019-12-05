@@ -3,53 +3,42 @@
     <head>
         <meta charset="utf-8">
         <title>KasburgerTube Upload</title>
+        <link rel= "stylesheet" type= "text/css" href="{{ url_for('static', filename='css/upload.css') }}">
     </head>
     <body>
         <center>
             <div id="upHeader"><h1>Upload Page</h1><br><br></div>
-        <p>
-    	{% with messages = get_flashed_messages() %}
-    	  {% if messages %}
-    		<ul class=flashes>
-    		{% for message in messages %}
-    		  <li>{{ message }}</li>
-    		{% endfor %}
-    		</ul>
-    	  {% endif %}
-    	{% endwith %}
-    </p>
-    <form method="post" action="/upload" enctype="multipart/form-data">
-        <dl>
+        </center>
+    <center id="mainBody"><form method="post" action="/upload" enctype="multipart/form-data">
+        <dl id="vidUp">
     		<p>
                 <label for="file">Select a video:   </label>
     			<input type="file" name="file" autocomplete="off" required>
     		</p>
         </dl>
-        <dl>
+        <dl id="thmUp">
     		<p>
                 <label for="thumb">Select a thumbnail:   </label>
     			<input type="file" name="thumb" autocomplete="off" required>
     		</p>
         </dl>
 
-        <div>
+        <div id="uname">
             <label for="user">Username:</label>
             <input type="text" id="user" name="user" value="Anonymous" class="form-control">
         </div>
-        <div>
+        <div id="tit">
             <label for="title">Title:</label>
             <input type="text" id="title" name="title" value="Bad Video Title" class="form-control">
         </div>
 
-        <div>
+        <div id="disc">
             <label for="desc">Description:</label>
             <textarea class="form-control" id="desc" name="desc" placeholder="Message">BlahBlahBlah this video sucks.</textarea>
         </div><br>
-        <p>
+        <p id="sub">
     		<input type="submit" value="Submit">
     	</p>
-    </form>
-
-        </center>
+    </form></center>
     </body>
 </html>

@@ -69,7 +69,7 @@ def allowed_file(filename):
 
 @app.route("/upload")
 def upload_form(disabled = True):
-	if disabled: return err("The upload feature is temporarily disabled.")
+	#if disabled: return err("The upload feature is temporarily disabled.")
 	return render_template('upload.html')
 @app.route("/upload//bypass")
 def up_bypass():
