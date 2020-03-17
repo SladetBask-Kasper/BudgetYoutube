@@ -85,10 +85,18 @@ def upload_file():
 			return err('No thumbnail part')
 		file = request.files['file']
 		thumb = request.files['thumb']
-		if file.filename == '':
+		if file.filename == '' and (".mp4" in thumb.filename.lower() or
+				".mp3" in thumb.filename.lower() or
+				".mov" in thumb.filename.lower() or
+				".mkv" in thumb.filename.lower() or
+				".avi" in thumb.filename.lower()):
 			return err("No file selected for uploading")
-		if thumb.filename == '':
-			return err("No thumbnail selected for uploading")
+		if thumb.filename == '' and (".png" in thumb.filename.lower() or
+				".jpg" in thumb.filename.lower() or
+				".jpeg" in thumb.filename.lower() or
+				".svg" in thumb.filename.lower() or
+				".bmp" in thumb.filename.lower()):
+			return err("Invalid thumbnail")
 		if file and allowed_file(file.filename):
 			filename = secure_filename("main_vid.mp4")
 			fname_thumb = secure_filename("thumbnail.png")
